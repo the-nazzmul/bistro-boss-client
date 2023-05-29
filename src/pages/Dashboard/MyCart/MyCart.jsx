@@ -39,11 +39,11 @@ const MyCart = () => {
     }
 
     return (
-        <div className="w-full px-8">
+        <div className="w-full px-8 max-h-full">
             <Helmet>
                 <title>Bistro Boss | My Card</title>
             </Helmet>
-            <div className="flex items-center justify-between uppercase px-8 mb-8" >
+            <div className="flex items-center justify-evenly uppercase my-8" >
                 <h3 className="text-3xl">Total Items: {cart.length}</h3>
                 <h3 className="text-3xl">Total Price: ${total}</h3>
                 <button className="btn bg-[#D1A054] border-0">Pay</button>

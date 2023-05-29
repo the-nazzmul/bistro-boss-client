@@ -28,8 +28,8 @@ const Dashboard = () => {
                         </NavLink></li>
                     <div className="divider"></div>
                     <li><NavLink to='/'><FaHome></FaHome> Home</NavLink></li>
-                    {/* <li><NavLink><BiMenu></BiMenu> Menu</NavLink></li>
-                    <li><NavLink><FaShoppingBag></FaShoppingBag> Shop</NavLink></li> */}
+                    <li><NavLink to='/menu'><BiMenu></BiMenu> Menu</NavLink></li>
+                    <li><NavLink to="/order/salad"><FaShoppingBag></FaShoppingBag> Shop</NavLink></li>
                 </ul>
 
             </div>
