@@ -25,18 +25,16 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
+            .then(() => {
+                // const user = result.user;
+                // console.log(user);
                 Swal.fire({
-                    title: 'User Login Successful.',
-                    showClass: {
-                        popup: 'animate__animated animate__fadeInDown'
-                    },
-                    hideClass: {
-                        popup: 'animate__animated animate__fadeOutUp'
-                    }
-                });
+                    position: 'center',
+                    icon: 'success',
+                    title: `Login Successful!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
                 navigate(from, { replace: true });
             })
     }
@@ -85,8 +83,8 @@ const Login = () => {
                                 </label>
                                 <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the captcha above" className="input input-bordered" />
                             </div>
-                            {/* TODO: Disable button */}
                             <div className="form-control mt-6">
+                                {/* TODO: disabled */}
                                 <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                             <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
