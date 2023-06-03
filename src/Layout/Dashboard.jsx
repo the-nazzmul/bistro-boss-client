@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaHome, FaCalendarAlt, FaWallet, FaShoppingCart, FaShoppingBag, FaUtensils, FaBook, FaUsers } from 'react-icons/fa';
 import { BiMenu } from "react-icons/bi";
 import useCart from "../hooks/useCart";
+import useAdmin from "../hooks/useAdmin";
 
 
 
@@ -9,7 +10,8 @@ const Dashboard = () => {
     const [cart] = useCart()
 
     // TODO: need to set user to state
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin()
 
     return (
         <div className="drawer drawer-mobile">
@@ -26,11 +28,11 @@ const Dashboard = () => {
                     {
                         isAdmin ? <>
                             <li><NavLink to='/dashboard/home'><FaHome></FaHome> Admin Home</NavLink></li>
-                            <li><NavLink to='/dashboard/reservation'><FaUtensils></FaUtensils> Add Items </NavLink></li>
-                            <li><NavLink to='/menu'><BiMenu></BiMenu> Manage Items</NavLink></li>
+                            <li><NavLink to='/dashboard/addItem'><FaUtensils></FaUtensils> Add Items </NavLink></li>
+                            <li><NavLink to='/dashboard/manageItems'><BiMenu></BiMenu> Manage Items</NavLink></li>
                             <li><NavLink to='/dashboard/paymentHistory'><FaBook></FaBook> Manage Bookings</NavLink></li>
                             <li><NavLink to='/dashboard/allUsers'><FaUsers></FaUsers> All user</NavLink></li>
-                            
+
 
                         </> : <>
                             <li><NavLink to='/dashboard/home'><FaHome></FaHome> User Home</NavLink></li>
